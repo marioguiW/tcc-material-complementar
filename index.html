@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Material Complementar – Dashboard para Mercado Livre</title>
+<meta name="description" content="Material complementar do artigo de TCC: telas do sistema e do painel do Mercado Livre, descrição das funcionalidades e relatos das empresas usuárias.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1f2328;
+    --muted: #59636e;
+    --line: #d8dee4;
+    --soft: #f6f8fa;
+    --accent: #7a1f35;
+    --tag-ml: #8a6d00;
+    --tag-ml-bg: #fff6d6;
+    --tag-sis: #1a5e3a;
+    --tag-sis-bg: #e3f5ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1216;
+      --fg: #e6e9ed;
+      --muted: #9aa4af;
+      --line: #2b323a;
+      --soft: #171b21;
+      --accent: #e98aa1;
+      --tag-ml: #f2cf63;
+      --tag-ml-bg: #2d2610;
+      --tag-sis: #7fd6a3;
+      --tag-sis-bg: #12291d;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.65 Georgia, "Times New Roman", serif;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 40px 16px 80px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 8px; }
+  .kicker {
+    font: 600 13px/1.4 system-ui, sans-serif;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--accent);
+  }
+  h1 { font-size: 30px; line-height: 1.25; margin: 8px 0 12px; }
+  .meta { font: 15px/1.5 system-ui, sans-serif; color: var(--muted); }
+  nav {
+    font: 15px/1.6 system-ui, sans-serif;
+    background: var(--soft); border: 1px solid var(--line); border-radius: 8px;
+    padding: 14px 18px; margin: 24px 0;
+  }
+  nav ol { margin: 6px 0 0; padding-left: 20px; }
+  nav a, a { color: var(--accent); }
+  h2 { font-size: 24px; margin: 48px 0 8px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  h3 { font-size: 19px; margin: 32px 0 6px; }
+  p { margin: 10px 0; }
+  figure { margin: 20px 0 28px; }
+  figure a { display: block; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: #fff; }
+  figure img { display: block; width: 100%; height: auto; }
+  figure.narrow { max-width: 360px; margin-left: auto; margin-right: auto; }
+  figcaption { font: 14px/1.5 system-ui, sans-serif; color: var(--muted); margin-top: 8px; }
+  .tag {
+    display: inline-block; font: 600 11px/1 system-ui, sans-serif; letter-spacing: .04em;
+    text-transform: uppercase; padding: 4px 7px; border-radius: 4px; margin-right: 6px;
+    vertical-align: 1px;
+  }
+  .tag.ml { color: var(--tag-ml); background: var(--tag-ml-bg); }
+  .tag.sis { color: var(--tag-sis); background: var(--tag-sis-bg); }
+  .note {
+    font: 15px/1.55 system-ui, sans-serif; background: var(--soft);
+    border-left: 3px solid var(--accent); padding: 12px 16px; border-radius: 0 6px 6px 0;
+  }
+  blockquote { margin: 14px 0; padding: 0 0 0 16px; border-left: 3px solid var(--line); }
+  blockquote cite { display: block; font: 600 14px/1.5 system-ui, sans-serif; font-style: normal; color: var(--muted); margin-bottom: 4px; }
+  footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); font: 14px/1.5 system-ui, sans-serif; color: var(--muted); }
+  @media (max-width: 600px) { h1 { font-size: 24px; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Material complementar · TCC II</div>
+  <h1>Dashboard Web para Gestão de Anúncios Próprios no Mercado Livre Utilizando Interface de Programação de Aplicações (API)</h1>
+  <div class="meta">Mario Guilherme Wilhelms · Curso de Engenharia de Software · Faculdade Donaduzzi · 2026</div>
+</header>
+
+<p>Esta página complementa o artigo de Trabalho de Conclusão de Curso. Ela reúne as telas do sistema desenvolvido e do painel do Mercado Livre usadas na comparação da Seção 4 do artigo, a descrição de cada funcionalidade e a íntegra dos relatos das empresas usuárias. O mesmo conteúdo está disponível em <a href="material-complementar.pdf">PDF</a>.</p>
+
+<p class="note">Para preservar o anonimato das empresas participantes, os elementos que poderiam identificá-las foram cobertos com retângulos cinza: nome da loja e da conta, fornecedores, marcas, títulos, fotos, SKUs e códigos de anúncios, além de totais de faturamento. Nenhum dado pessoal de comprador é apresentado. As empresas são denominadas Empresa A, Empresa B e Empresa C. Clique em qualquer tela para vê-la em tamanho original.</p>
+
+<nav>
+  <strong>Conteúdo</strong>
+  <ol>
+    <li><a href="#sistema">O sistema</a></li>
+    <li><a href="#estoque">Estoque e reposição</a></li>
+    <li><a href="#rentabilidade">Rentabilidade e decisões comerciais</a></li>
+    <li><a href="#produtividade">Produtividade operacional</a></li>
+    <li><a href="#relatos">Relatos das empresas usuárias</a></li>
+  </ol>
+</nav>
+
+<h2 id="sistema">1. O sistema</h2>
+<p>O sistema é uma aplicação web com <em>backend</em> em Node.js e <em>frontend</em> em React, integrada à API do Mercado Livre e à API do Bling, o sistema de gestão empresarial (ERP) utilizado pelas empresas. O ERP é a fonte do estoque, dos produtos e dos fornecedores; o Mercado Livre é a fonte dos anúncios, pedidos, promoções e publicidade. O cruzamento dessas duas fontes é o que permite os diagnósticos descritos a seguir.</p>
+<figure>
+  <a href="imagens/01-visao-geral.png"><img src="imagens/01-visao-geral.png" alt="Painel inicial do sistema" loading="lazy"></a>
+  <figcaption><span class="tag sis">Sistema</span>Figura 1. Painel inicial, com anúncios por status, indicadores de vendas e <em>rankings</em> por SKU.</figcaption>
+</figure>
+
+<h2 id="estoque">2. Estoque e reposição</h2>
+
+<h3>2.1 Recompras</h3>
+<p>No painel do Mercado Livre, o vendedor consulta o estoque de cada anúncio e, em relatórios separados, as vendas realizadas. A decisão de quando e quanto repor depende de cruzar essas informações manualmente, sem considerar o estoque do ERP, o prazo de entrega do fornecedor nem a quantidade mínima de compra.</p>
+<p>A aba de Recompras faz esse cruzamento por SKU e por fornecedor. O estoque vem do ERP e as vendas, do histórico de pedidos. O sistema calcula duas sugestões de compra para cada produto: uma pela média ponderada das vendas dos últimos seis meses completos, com peso maior para os meses mais recentes, e outra pela velocidade de venda dos últimos 15 dias. Ambas consideram o prazo de entrega, o ciclo de compra e o lote mínimo do fornecedor. Cada produto é classificado como urgente, atenção ou adequado. Quando o ritmo recente supera a média semestral, a sugestão de curto prazo cresce antes de o estoque acabar.</p>
+<figure>
+  <a href="imagens/02-ml-lista-anuncios.png"><img src="imagens/02-ml-lista-anuncios.png" alt="Lista de anúncios no painel do Mercado Livre" loading="lazy"></a>
+  <figcaption><span class="tag ml">Mercado Livre</span>Figura 2. Lista de anúncios no painel do Mercado Livre, com o estoque de cada anúncio.</figcaption>
+</figure>
+<figure>
+  <a href="imagens/03-sis-recompras.png"><img src="imagens/03-sis-recompras.png" alt="Aba de Recompras do sistema" loading="lazy"></a>
+  <figcaption><span class="tag sis">Sistema</span>Figura 3. Aba de Recompras, com classificação por urgência e sugestões de 6 meses e de 15 dias.</figcaption>
+</figure>
+
+<h3>2.2 Conferência de estoque entre Mercado Livre e ERP</h3>
+<p>No painel do Mercado Livre, o estoque de cada anúncio é exibido sem referência ao estoque registrado no ERP. A aba de Estoque consulta os anúncios da conta, obtém o SKU e a quantidade de cada um, busca os mesmos SKUs no ERP e classifica cada anúncio como conferido, divergente, não encontrado no ERP ou sem SKU. A conferência manual passa a ser uma lista de exceções.</p>
+<figure>
+  <a href="imagens/04-sis-estoque-ml-erp.png"><img src="imagens/04-sis-estoque-ml-erp.png" alt="Conferência de estoque entre Mercado Livre e ERP" loading="lazy"></a>
+  <figcaption><span class="tag sis">Sistema</span>Figura 4. Conferência automática por SKU entre o estoque do Mercado Livre e o do ERP.</figcaption>
+</figure>
+
+<h3>2.3 Sugestão de compra ao fornecedor</h3>
+<p>A aba de Sugestão de Compra calcula quanto comprar de cada fornecedor para repor o estoque. A velocidade de venda de cada produto desconsidera os dias em que ele esteve sem estoque, e o ponto de pedido e o estoque-alvo são definidos pelo prazo de entrega, pelos dias de segurança e pela cobertura desejada. Os kits vendidos nos anúncios são decompostos nas peças que os compõem, de modo que a venda de um kit gera demanda para cada componente. O resultado pode ser filtrado por fornecedor e exportado em planilha. O painel do Mercado Livre não oferece recurso equivalente.</p>
+
+<h2 id="rentabilidade">3. Rentabilidade e decisões comerciais</h2>
+
+<h3>3.1 Painel de Lucro</h3>
+<p>O detalhe da venda no Mercado Livre apresenta preço, tarifa de venda e custo de envio, mas não o custo do produto, os impostos e os custos operacionais. O Painel de Lucro combina os pedidos pagos do período com a tarifa e o frete cotados pela API e com os custos cadastrados pelo vendedor por SKU, mostrando o lucro por unidade e por anúncio e destacando os produtos com margem negativa. Tarifa e frete são cotações da API, e não os valores efetivamente cobrados em cada pedido.</p>
+<figure class="narrow">
+  <a href="imagens/05-ml-detalhe-venda.png"><img src="imagens/05-ml-detalhe-venda.png" alt="Detalhe de uma venda no Mercado Livre" loading="lazy"></a>
+  <figcaption><span class="tag ml">Mercado Livre</span>Figura 5. Detalhe de uma venda, apenas com os valores (dados do comprador removidos).</figcaption>
+</figure>
+<figure>
+  <a href="imagens/06-sis-painel-lucro.png"><img src="imagens/06-sis-painel-lucro.png" alt="Painel de Lucro do sistema" loading="lazy"></a>
+  <figcaption><span class="tag sis">Sistema</span>Figura 6. Painel de Lucro, com tarifa, frete, custos e lucro por anúncio.</figcaption>
+</figure>
+
+<h3>3.2 Central de Promoções</h3>
+<p>Na central de promoções do Mercado Livre, o vendedor vê o preço promocional e o valor que receberá, mas não a margem. A Central de Promoções do sistema calcula, para cada promoção disponível ou ativa, a tarifa ao preço promocional, o frete, a redução de tarifa estimada quando o Mercado Livre cofinancia o desconto e a margem após custo e impostos. Promoções com cofinanciamento e margem acima do mínimo definido pelo vendedor são sinalizadas como oportunidades, e promoções ativas com margem negativa geram alerta. A adesão continua sendo feita no painel do Mercado Livre.</p>
+<figure>
+  <a href="imagens/07-ml-central-promocoes.png"><img src="imagens/07-ml-central-promocoes.png" alt="Central de promoções do Mercado Livre" loading="lazy"></a>
+  <figcaption><span class="tag ml">Mercado Livre</span>Figura 7. Central de promoções do Mercado Livre.</figcaption>
+</figure>
+<figure>
+  <a href="imagens/08-sis-central-promocoes.png"><img src="imagens/08-sis-central-promocoes.png" alt="Central de Promoções do sistema" loading="lazy"></a>
+  <figcaption><span class="tag sis">Sistema</span>Figura 8. Central de Promoções, com a margem de cada promoção e a sinalização de oportunidades.</figcaption>
+</figure>
+
+<h3>3.3 Painel de Publicidade</h3>
+<p>O Mercado Ads apresenta métricas por campanha. O Painel de Publicidade consulta as mesmas métricas pela API e as organiza por anúncio, em janelas de 3, 7, 15 ou 30 dias, com três indicadores: <strong>ACOS</strong> (<em>Advertising Cost of Sales</em>), o investimento em anúncios dividido pela receita gerada por eles; <strong>ROAS</strong> (<em>Return on Ad Spend</em>), a receita gerada por real investido; e <strong>TACOS</strong> (<em>Total Advertising Cost of Sales</em>), o investimento em anúncios dividido pela receita total do vendedor. Anúncios com gasto e sem vendas são sinalizados. O sistema não altera campanhas nem lances.</p>
+<figure>
+  <a href="imagens/09-ml-mercado-ads.png"><img src="imagens/09-ml-mercado-ads.png" alt="Relatório do Mercado Ads" loading="lazy"></a>
+  <figcaption><span class="tag ml">Mercado Livre</span>Figura 9. Relatório de campanhas no Mercado Ads.</figcaption>
+</figure>
+<figure>
+  <a href="imagens/10-sis-painel-publicidade.png"><img src="imagens/10-sis-painel-publicidade.png" alt="Painel de Publicidade do sistema" loading="lazy"></a>
+  <figcaption><span class="tag sis">Sistema</span>Figura 10. Painel de Publicidade, com investimento, ACOS, ROAS e TACOS por anúncio em janelas de 7 dias.</figcaption>
+</figure>
+
+<h2 id="produtividade">4. Produtividade operacional</h2>
+
+<h3>4.1 Preços em Massa</h3>
+<p>No painel do Mercado Livre, o preço é alterado anúncio por anúncio ou por planilha de edição em massa, que precisa ser baixada, editada e reenviada. A aba de Preços em Massa permite buscar uma linha de produtos por título, SKU, marca ou modelo, aplicar um percentual ou valor fixo de aumento ou redução, desmarcar os anúncios que não devem mudar e revisar o novo preço antes de enviar. O sistema pede confirmação, atualiza também as variações e registra cada alteração em um histórico.</p>
+<figure>
+  <a href="imagens/11-ml-editar-preco.png"><img src="imagens/11-ml-editar-preco.png" alt="Edição de preço no Mercado Livre" loading="lazy"></a>
+  <figcaption><span class="tag ml">Mercado Livre</span>Figura 11. Edição de preço de um anúncio no painel do Mercado Livre.</figcaption>
+</figure>
+<figure>
+  <a href="imagens/12-sis-precos-em-massa.png"><img src="imagens/12-sis-precos-em-massa.png" alt="Preços em Massa do sistema" loading="lazy"></a>
+  <figcaption><span class="tag sis">Sistema</span>Figura 12. Preços em Massa, com reajuste percentual aplicado a uma linha de produtos e revisão do novo preço.</figcaption>
+</figure>
+
+<h3>4.2 Clonagem de anúncios entre contas</h3>
+<p>O painel do Mercado Livre não oferece a cópia de anúncios entre contas distintas. A aba de Clonagem permite escolher a conta de origem e a de destino entre as contas autorizadas, selecionar os anúncios, revisar preço e tipo de anúncio e publicar no destino. A conta de origem é acessada apenas para leitura, e o sistema pede confirmação e valida cada anúncio na API antes de publicar.</p>
+<figure>
+  <a href="imagens/13-sis-clonagem.png"><img src="imagens/13-sis-clonagem.png" alt="Clonagem de anúncios entre contas" loading="lazy"></a>
+  <figcaption><span class="tag sis">Sistema</span>Figura 13. Clonagem de anúncios, com escolha das contas de origem e de destino e seleção dos anúncios.</figcaption>
+</figure>
+
+<h3>4.3 Extensão para o navegador</h3>
+<p>A extensão para o Google Chrome funciona na página de promoções do próprio Mercado Livre. Ela lê o valor que o vendedor receberá em cada promoção, desconta o custo do produto e as alíquotas cadastradas no sistema e exibe o lucro estimado ao lado do preço final.</p>
+<figure>
+  <a href="imagens/14-sis-extensao-chrome.png"><img src="imagens/14-sis-extensao-chrome.png" alt="Extensão do Chrome na página de promoções" loading="lazy"></a>
+  <figcaption><span class="tag sis">Sistema</span>Figura 14. Extensão do Chrome exibindo o lucro estimado de cada promoção na página de promoções do Mercado Livre.</figcaption>
+</figure>
+
+<h2 id="relatos">5. Relatos das empresas usuárias</h2>
+<p>Os relatos foram solicitados por mensagem de WhatsApp, com a concordância dos responsáveis para publicação sem identificação. Os textos foram mantidos como enviados, exceto pela supressão de elementos que poderiam identificar as empresas, indicada entre colchetes.</p>
+
+<blockquote>
+  <cite>Empresa A</cite>
+  “Antes do sistema, a reposição era feita no ‘olhômetro’, com uma planilha que ninguém atualizava direito. A aba de Recompras mudou isso. Ela cruza o ritmo de vendas dos últimos 6 meses com o dos últimos 15 dias, e assim conseguimos ver quais peças estão acelerando antes de faltarem. Os furos de estoque em itens de giro alto [exemplos de produtos suprimidos para preservar o anonimato] caíram bastante, e paramos de perder posição nos anúncios por ficar sem estoque. A aba de Estoque, que compara o Mercado Livre com o Bling por SKU, também ajudou muito. Achamos vários anúncios com estoque diferente do ERP, que antes só descobríamos quando o cliente comprava e não tinha o produto. Hoje a conferência que levava uma tarde inteira sai em poucos minutos. A Sugestão de Compra já separa os kits nos componentes e agrupa por fornecedor, então o pedido praticamente sai pronto.”
+</blockquote>
+
+<blockquote>
+  <cite>Empresa B</cite>
+  “Nosso maior problema era a margem. Vendíamos bastante, mas no fim do mês sobrava pouco e não sabíamos onde estava o vazamento. O Painel de Lucro mostrou o resultado real de cada venda, já descontando tarifa, frete e imposto, e descobrimos produtos que davam prejuízo sem a gente perceber. A Central de Promoções foi o que mais trouxe retorno. Antes recusávamos quase todas as campanhas do Mercado Livre por medo de vender abaixo do custo. Agora vemos a margem de cada promoção antes de aceitar, e várias têm redução de tarifa que compensa o desconto. Passamos a entrar em muito mais campanhas com segurança, e as vendas subiram nesses períodos. O Painel de Publicidade nos fez cortar campanhas de Ads que gastavam muito e quase não convertiam, e colocar o dinheiro nos anúncios que realmente vendiam.”
+</blockquote>
+
+<blockquote>
+  <cite>Empresa C</cite>
+  “Com tantas variações de tamanho e cor, mexer em preço era um pesadelo. A aba de Preços em Massa resolveu isso: quando o fornecedor reajusta, aplicamos o percentual numa linha inteira e excluímos os modelos que não devem mudar. O que levava horas, anúncio por anúncio, hoje leva minutos e sem erro de digitação. A clonagem de anúncios entre contas foi decisiva quando abrimos a segunda conta. Copiamos os anúncios da conta principal sem nenhum risco para os originais, e o sistema sempre pede confirmação antes de publicar. Economizamos semanas de cadastro manual. A extensão do Chrome também virou rotina da equipe. Enquanto navegamos no próprio Mercado Livre, ela já mostra a margem e o cálculo do anúncio, sem precisar abrir outra ferramenta.”
+</blockquote>
+
+<footer>
+  Wilhelms, M. G. (2026). Material complementar: Dashboard Web para Gestão de Anúncios Próprios no Mercado Livre. Faculdade Donaduzzi, Toledo – PR. Telas elaboradas pelo autor (2026).
+</footer>
+
+</div>
+</body>
+</html>
